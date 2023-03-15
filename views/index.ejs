@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Health Management System</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <!-- Font Awesome Link -->
+  <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"> </script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <style media="screen">
+    #title {
+      background-color: #ff4c68;
+      color: white;
+    }
+
+
+    h1{
+      font-family: Montessart-bold;
+      font-size: 3.5rem;
+      line-height: 1.5;
+      font-weight: 900;
+    }
+
+    h6 {
+      position: absolute; /* Positions the heading element */
+      margin-top: 80px;
+      font-size: 0.9rem;
+    }
+
+    h2{
+      font-family: Montessart-bold;
+      line-height: 1.5;
+    }
+
+    .container-fluid{
+      padding: 3% 15% 12%;
+    }
+
+    body{
+      font-family: "Montserrat";
+    }
+
+    /* Title Image */
+    .title-image{
+      width: 60%;
+      transform: rotate(25deg); /* Equal to rotateZ(45deg) */
+      position: absolute;
+      right: 25%;
+    }
+
+    /* Features Section */
+    #features{
+      padding: 7% 15%;
+      background-color: #fff;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Navigation Bar */
+
+    .navbar-brand{
+      font-family: "Ubuntu";
+      font-size: 3rem;
+      font-weight: bold;
+    }
+
+    .navbar{
+      padding: 0 0 4.5rem;
+    }
+
+    .nav-item{
+      padding: 0 18px;
+    }
+
+    .nav-link{
+      font-size: 1.1rem;
+      font-family: Montserrat-light;
+    }
+
+  #navbarSupportedContent{
+    margin-top: -10px;
+    margin-left: 150px;
+  }
+
+    /* Download Button */
+
+    .download-button{
+      margin: 5% 3% 5% 0;
+    }
+
+    #features{
+      padding: 7% 15%;
+    }
+
+    .feature-box{
+      text-align: center;
+      padding: 5%;
+    }
+
+    h3{
+      font-weight: bolder;
+    }
+
+
+    .icon{
+      color: #ef8172;
+      margin-bottom: 1rem;
+    }
+
+    .icon:hover{
+      color: #ff4c68;
+      cursor: pointer;
+    }
+
+    /* Testimonials Section */
+
+    #testimonials{
+      text-align: center;
+      background-color: #ef8172;
+      color: #fff;
+    }
+
+    .carousel-item{
+      padding: 7% 15%;
+    }
+    .testimonial-image{
+      width: 10%;
+      border-radius: 100%;
+      margin: 20px;
+    }
+
+    #press{
+      background-color: #ef8172;
+      text-align: center;
+      padding-bottom: 3%;
+    }
+
+    .press-logo{
+      width: 15%;
+      margin: 20px 20px 50px;
+    }
+
+    /* Pricing Section */
+
+    #pricing{
+      padding: 80px;
+      text-align: center;
+    }
+
+    .pricing-column{
+      padding: 3% 2%;
+    }
+
+    /* Media Query */
+
+    @media (max-width: 1028px) {
+      .title-image{
+        position: static;
+        transform: rotate(0);
+      }
+      #title{
+        text-align: center;
+      }
+    }
+
+    #cta{
+      text-align: center;
+      background-color: #ff4c68;
+      padding: 7% 15%;
+    }
+
+    .cta-heading{
+      font-family: "Montserrat-Black";
+      color: white;
+      font-weight: 900;
+      font-size: 3rem;
+    }
+
+    #footer{
+      padding: 7% 15% 8%;
+      background-color: white;
+      text-align: Center;
+    }
+
+    .social-icon{
+      margin: 20px 20px;
+      font-size: 1.5rem;
+      color: #ff4c68;
+    }
+
+  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Ubuntu&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" type="image/png" href="path/to/favicon.png">
+</head>
+
+<body>
+
+  <section id="title">
+
+    <!-- Nav Bar -->
+    <div class="container-fluid">
+      <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="">Health Management System</a>
+        <h6>By SightSage Food and Nutrition Inc.</h6>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#footer">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/login">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/mission">Mission</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+
+      <!-- Title -->
+
+      <div Class="row">
+        <div class="col-lg-6">
+          <h1>Track your progress, improve your health.</h1>
+          <a href="/login"> <button type="button" class="btn btn-dark btn-lg download-button"> Login in</button> </a>
+          <a href = "/register"> <button type="button" class="btn btn-outline-light btn-lg download-button"> Sign up</button> </a>
+        </div>
+
+
+        <div class="col-lg-6">
+          <img class="title-image" src= "" alt="iphone-mockup">
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Features -->
+
+  <section id="features">
+    <div class="row">
+      <div class="feature-box col-lg-4">
+        <i class="icon fas fa-check-circle fa-4x"></i>
+        <h3><i class="fa-solid fa-circle-check"></i> Easy to Use</h3>
+        <p>Answer a few questions and get an in-depth analysis of your health.</p>
+      </div>
+      <div class="feature-box col-lg-4">
+        <i class="icon fas fa-bullseye fa-4x"></i>
+        <h3>Elite Clientele</h3>
+        <p>We are proud to have a clientele who take an active role in improving their lives.</p>
+      </div>
+      <div class="feature-box col-lg-4">
+        <i class="icon fas fa-heart fa-4x"></i>
+        <h3>Healthy Living</h3>
+        <p>Take control of your health and achieve your wellness goals.</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Testimonials -->
+
+  <section id="testimonials">
+    <div id="tindog-carousel" class="carousel slide" data-ride="false">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <h2>I no longer have to sniff other dogs for love. I've found the hottest Corgi on TinDog. Woof.</h2>
+          <img class="testimonial-image" src="images/dog-img.jpg" alt="dog-profile">
+          <em>Pebbles, New York</em>
+        </div>
+        <div class="carousel-item">
+          <h2 class="testimonial-text">My dog used to be so lonely, but with TinDog's help, they've found the love of their life. I think.</h2>
+          <img class="testimonial-image" src="images/lady-img.jpg" alt="lady-profile">
+          <em>Beverly, Illinois</em>
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#tindog-carousel" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      </a>
+      <a class="carousel-control-next" href="#tindog-carousel" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      </a>
+    </div>
+  </section>
+
+
+  <!-- Press -->
+
+  <section id="press">
+    <img class="press-logo" src="images/tnw.png" alt="tnw-logo">
+    <img class="press-logo" src="images/techcrunch.png" alt="tc-logo">
+    <img class="press-logo" src="images/bizinsider.png" alt="biz-insider-logo">
+    <img class="press-logo" src="images/mashable.png" alt="mashable-logo">
+
+  </section>
+
+
+  <!-- Pricing -->
+
+
+  <section id="pricing">
+
+    <h2>A Plan for Every Dog's Needs</h2>
+    <p>Simple and affordable price plans for your and your dog.</p>
+    <div class="row">
+
+      <div class="pricing-column col-lg-4 col-md-6">
+        <div class="card">
+          <div class="card-header">
+            <h3>Chihuahua</h3>
+          </div>
+          <div class="card-body">
+            <h2>Free</h2>
+            <p>5 Matches Per Day</p>
+            <p>10 Messages Per Day</p>
+            <p>Unlimited App Usage</p>-
+            <button type="button" class="btn btn-lg btn-block btn-outline-dark">Sign Up</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="pricing-column col-lg-4 col-md-6">
+        <div class="card">
+          <div class="card-header">
+            <h3>Labrador</h3>
+          </div>
+          <div class="card-body">
+            <h2>$49 / mo</h2>
+            <p>Unlimited Matches</p>
+            <p>Unlimited Messages</p>
+            <p>Unlimited App Usage</p>
+            <button type="button" class="btn btn-lg btn-block btn-dark">Sign Up</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="pricing-column col-lg-4">
+        <div class="card">
+          <div class="card-header">
+            <h3>Mastiff</h3>
+          </div>
+          <div class="card-body">
+            <h2>$99 / mo</h2>
+            <p>Pirority Listing</p>
+            <p>Unlimited Matches</p>
+            <p>Unlimited Messages</p>
+            <p>Unlimited App Usage</p>
+            <button type="button" class="btn btn-lg btn-block btn-dark">Sign Up</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Call to Action -->
+
+  <section id="cta">
+    <h3 class="cta-heading">Take the first big Step in improving your Health today</h3>
+    <div class="button-group">
+      <a href="/login"><button type="button" class="btn btn-dark btn-lg download-button">Login in</button></a>
+      <a href="/register"><button type="button" class="btn btn-outline-light btn-lg download-button">Sign up</button></a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+
+  <footer id="footer">
+
+    <a href = "https://www.facebook.com/sightsage/"> <i class="social-icon fab fa-facebook-f"></i> </a>
+    <a href = "https://twitter.com/sightsageco"> <i class="social-icon fab fa-twitter"></i> </a>
+    <a href = "https://www.instagram.com/sightsage/?hl=en"> <i class="social-icon fab fa-instagram"></i> </a>
+    <a href="mailto:support@sightsage.com"><i class="social-icon fas fa-envelope"></i></a>
+
+
+    <p>© Copyright 2023 SightSage Food and Nutrition Inc.</p>
+
+  </footer>
+<script src="index.js" charset="utf-8"></script>
+</body>
+
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      .chart-container {
+  margin: 50px auto;
+  max-width: 800px;
+  text-align: center;
+}
+
+.chart {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  height: 500px;
+}
+
+.chart-axis {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.chart-label {
+  font-size: 12px;
+  color: #666;
+}
+
+.chart-bars {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  height: 100%;
+  width: calc(100% - 100px);
+}
+
+.chart-bar {
+  width: 40px;
+  background-color: #007bff;
+  margin: 0 5px;
+  transition: all 0.3s ease;
+}
+
+.chart-bar:hover {
+  background-color: #0056b3;
+}
+
+.chart-labels {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 100%;
+  padding: 10px 0;
+}
+/* Styles for the chart title */
+.chart-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* Styles for the chart axis label */
+.chart-axis-label {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* Styles for the chart axis line */
+.chart-axis-line {
+  height: 2px;
+  background-color: #ccc;
+  margin-bottom: 10px;
+}
+
+/* Styles for the chart bar label */
+.chart-bar-label {
+  font-size: 12px;
+  color: #333;
+  margin-top: 5px;
+}
+
+/* Styles for the chart bar value */
+.chart-bar-value {
+  font-size: 14px;
+  font-weight: bold;
+  color: #fff;
+  margin-top: 5px;
+}
+
+/* Styles for the chart bar tooltip */
+.chart-bar-tooltip {
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px;
+  background-color: #333;
+  color: #fff;
+  border-radius: 5px;
+  opacity: 0;
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+/* Styles for the chart bar tooltip arrow */
+.chart-bar-tooltip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 5px;
+  border-style: solid;
+  border-color: #333 transparent transparent transparent;
+}
+
+/* Styles for the chart bar tooltip show state */
+.chart-bar:hover .chart-bar-tooltip {
+  opacity: 1;
+}
+
+    </style>
+  </head>
+  <body>
+    <div class="chart-container">
+      <h2>Customer Metrics</h2>
+      <div class="chart">
+        <div class="chart-axis">
+          <div class="chart-label">100%</div>
+          <div class="chart-label">80%</div>
+          <div class="chart-label">60%</div>
+          <div class="chart-label">40%</div>
+          <div class="chart-label">20%</div>
+          <div class="chart-label">0%</div>
+        </div>
+        <div class="chart-bars">
+          <div class="chart-bar" style="height: 60%;" data-value="60"></div>
+          <div class="chart-bar" style="height: 80%;" data-value="80"></div>
+          <div class="chart-bar" style="height: 20%;" data-value="20"></div>
+          <div class="chart-bar" style="height: 40%;" data-value="40"></div>
+          <div class="chart-bar" style="height: 90%;" data-value="90"></div>
+          <div class="chart-bar" style="height: 70%;" data-value="70"></div>
+          <div class="chart-bar" style="height: 50%;" data-value="50"></div>
+          <div class="chart-bar" style="height: 30%;" data-value="30"></div>
+          <div class="chart-bar" style="height: 10%;" data-value="10"></div>
+          <div class="chart-bar" style="height: 85%;" data-value="85"></div>
+        </div>
+        <div class="chart-labels">
+          <div class="chart-label">Mental Health Index</div>
+          <div class="chart-label">Sleep Index</div>
+          <div class="chart-label">Outdoor Index</div>
+          <div class="chart-label">Nutrition Index</div>
+          <div class="chart-label">Functional Food Compliance Index</div>
+          <div class="chart-label">Reading Index</div>
+          <div class="chart-label">Indoor Lighting Index</div>
+          <div class="chart-label">General Index</div>
+          <div class="chart-label">Medical Index</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

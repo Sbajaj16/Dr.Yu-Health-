@@ -1,0 +1,163 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Customer Portal Dashboard</title>
+    <style>
+      /* Styles for the main dashboard container */
+      .dashboard-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 50px auto;
+        max-width: 1200px;
+      }
+
+      /* Styles for the dashboard header */
+      .dashboard-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding: 20px 50px;
+        background-color: #f0f0f0;
+        border-radius: 5px 5px 0 0;
+      }
+
+      /* Styles for the dashboard title */
+      .dashboard-title {
+        font-size: 32px;
+        font-weight: bold;
+        color: #333;
+      }
+
+      /* Styles for the dashboard navigation */
+      .dashboard-navigation {
+        display: flex;
+        align-items: center;
+      }
+
+      /* Styles for the navigation links */
+      .dashboard-navigation a {
+        display: block;
+        margin: 0 10px;
+        font-size: 18px;
+        color: #333;
+        text-decoration: none;
+      }
+
+      /* Styles for the active navigation link */
+      .dashboard-navigation a.active {
+        font-weight: bold;
+        color: #ff4c68;
+      }
+
+      /* Styles for the dashboard content */
+      .dashboard-content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 100%;
+        padding: 50px;
+        background-color: #fff;
+        border-radius: 0 0 5px 5px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      }
+
+      /* Styles for the dashboard cards */
+      .dashboard-card {
+        flex-basis: calc(33.33% - 20px);
+        margin-bottom: 30px;
+        background-color: #f0f0f0;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        overflow: hidden;
+      }
+
+      /* Styles for the card header */
+      .dashboard-card-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        background-color: #ff4c68;
+        color: #fff;
+      }
+
+      /* Styles for the card title */
+      .dashboard-card-title {
+        font-size: 24px;
+        font-weight: bold;
+        margin: 0;
+      }
+
+      /* Styles for the card content */
+      .dashboard-card-content {
+        padding: 20px;
+      }
+
+      /* Styles for the card button */
+      .dashboard-card-button {
+        display: block;
+        margin-top: 20px;
+        padding: 10px 20px;
+        background-color: #fff;
+        color: #ff4c68;
+        border: 2px solid #ff4c68;
+        border-radius: 5px;
+        text-decoration: none;
+        transition: all 0.3s ease;
+      }
+
+      /* Styles for the card button hover state */
+      .dashboard-card-button:hover {
+        background-color: #ff4c68;
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="dashboard-container">
+      <div class="dashboard-header >
+<div class="dashboard-title">Customer Portal Dashboard</div>
+<nav class="dashboard-navigation">
+<a href="#" class="active">Home</a>
+<a href="#">Orders</a>
+<a href="#">Account</a>
+</nav>
+</div>
+<div class="dashboard-content">
+<div class="dashboard-card">
+<div class="dashboard-card-header">
+<h2 class="dashboard-card-title">SightSage Products</h2>
+</div>
+<div class="dashboard-card-content">
+<p>You haven't placed any orders yet.</p>
+<a href="https://sightsage.com/collections/all" class="dashboard-card-button">Check out our Products</a>
+</div>
+</div>
+<div class="dashboard-card">
+<div class="dashboard-card-header">
+<h2 class="dashboard-card-title">Account Information</h2>
+</div>
+<div class="dashboard-card-content">
+<p>Name: Sparsh Bajaj</p>
+<p>Email: sparshb37@gmail.com</p>
+<p>Phone: 2365132313</p>
+<a href="https://docs.google.com/forms/d/1u1D7LLDTMIm_k3mFo8SBwFjh9ciDoMdAdhnbDyiJyJ8/edit" class="dashboard-card-button">Take Test</a>
+</div>
+</div>
+<div class="dashboard-card">
+<div class="dashboard-card-header">
+<h2 class="dashboard-card-title">Results </h2>
+</div>
+<div class="dashboard-card-content">
+<p>Results Posted Below</p>
+<a href="/chart" class="dashboard-card-button">Check Results Here</a>
+</div>
+</div>
+</div>
+</div>
+  </body>
+</html>
