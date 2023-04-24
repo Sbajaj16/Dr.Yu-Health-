@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Questions</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Font Awesome Link -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"> </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            background-color: #cc2e2e;
+            color: #fff;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            margin-bottom: 10px;
+        }
+
+        form {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 4px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        input[type="number"],
+        input[type="text"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: none;
+            background-color: #f2f2f2;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        input[type="submit"] {
+            background-color: #cc2e2e;
+            color: #fff;
+            border: none;
+            padding: 12px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        input[type="submit"]:hover {
+            background-color: #e73c57;
+        }
+
+        /* Media queries */
+        @media (max-width: 768px) {
+            form {
+                padding: 10px;
+            }
+            input[type="number"],
+            input[type="text"],
+            textarea,
+            select {
+                padding: 8px;
+                margin-bottom: 10px;
+            }
+            input[type="submit"] {
+                padding: 8px 16px;
+            }
+        }
+    </style>
+
+  </head>
+  <body>
+    <form action="submit-survey" method="POST">
+       <h2>Section: Mental Health Index</h2>
+
+       <label for="stressLevel">What is your current stress level? (Linear Scale 1-10):</label>
+     <input type="number" id="stressLevel" name="stressLevel" min="1" max="10" required><br><br>
+
+     <label for="mentalDisorder">Are you suffering from any Mental Health Disorder? (If yes, please specify):</label>
+     <input type="text" id="mentalDisorder" name="mentalDisorder" placeholder="Specify mental health disorder"><br><br>
+
+     <label for="disorderEffect">If you answered yes to the previous question, how much is your Mental Health Disorder affecting your quality of life? (Linear Scale 1-10):</label>
+     <input type="number" id="disorderEffect" name="disorderEffect" min="1" max="10"><br><br>
+
+     <label for="eyePain">Do you feel eye pain or strain when you are stressed? If yes, please specify the degree to which you feel it. (Linear Scale 1-10):</label>
+     <input type="number" id="eyePain" name="eyePain" min="1" max="10"><br><br>
+
+     <h2>Section: Sports Index</h2>
+
+     <label for="physicalActivity">What is your level of physical activity? (Linear Scale 1-10):</label>
+     <input type="number" id="physicalActivity" name="physicalActivity" min="1" max="10" required><br><br>
+
+     <label for="activityDays">How many days in a week do you perform any form of physical activity? (Give Days as options to select):</label>
+     <select id="activityDays" name="activityDays" required>
+         <option value="1">1</option>
+         <option value="2">2</option>
+         <option value="3">3</option>
+         <option value="4">4</option>
+         <option value="5">5</option>
+         <option value="6">6</option>
+         <option value="7">7</option>
+     </select><br><br>
+
+     <label for="activityDuration">What is the average duration for which you perform a physical activity every week?</label>
+     <input type="text" id="activityDuration" name="activityDuration" placeholder="Enter duration" required><br><br>
+
+     <label for="sittingHours">How many hours on average do you spend sitting every day?</label>
+     <input type="number" id="sittingHours" name="sittingHours" min="0" required><br><br>
+
+     <label for="favoriteActivity">What sort of physical activity do you enjoy doing most?</label>
+     <input type="text" id="favoriteActivity" name="favoriteActivity" placeholder="Enter favorite activity" required><br><br>
+
+     <h2>Section: Sleep Index</h2>
+
+     <label for="wakeUpTime">What time do you wake up on average every day?</label>
+     <input type="time" id="wakeUpTime" name="wakeUpTime" required><br><br>
+     <label for="sleepHours">How many hours do you sleep for every night?</label>
+<input type="number" id="sleepHours" name="sleepHours" min="0" required><br><br>
+
+<label for="sleepTime">What time do you sleep on average every night?</label>
+<input type="time" id="sleepTime" name="sleepTime" required><br><br>
+
+<label for="sleepQuality">How would you rate your quality of sleep every night? (Linear Scale 1-10):</label>
+<input type="number" id="sleepQuality" name="sleepQuality" min="1" max="10" required><br><br>
+
+<label for="eyeDrynessMorning">Do you feel dryness in your eyes when you wake up in the morning? If you answered yes to the previous question, what is the degree of dryness you feel in your eyes on waking up? (Linear Scale 1-10):</label>
+<input type="number" id="eyeDrynessMorning" name="eyeDrynessMorning" min="1" max="10"><br><br>
+
+<h2>Section: Outdoor Index</h2>
+
+      <label for="hoursOutdoors">How many hours a day do you spend outdoors?</label>
+      <input type="number" id="hoursOutdoors" name="hoursOutdoors" min="0" required><br><br>
+
+      <label for="windyEyeDryness">Do you feel dryness in your eyes when it's windy?</label>
+      <select id="windyEyeDryness" name="windyEyeDryness" required>
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+      </select><br><br>
+
+      <label for="sunlightEyeDryness">Does exposure to sunlight cause your eyes to become dry?</label>
+      <select id="sunlightEyeDryness" name="sunlightEyeDryness" required>
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+      </select><br><br>
+
+      <label for="sunlightEyePain">Do you feel pain in your eyes when there is a lot of sunlight outdoors?</label>
+      <select id="sunlightEyePain" name="sunlightEyePain" required>
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+      </select><br><br>
+
+      <h2>Section: Nutrition Index</h2>
+
+      <label for="dailyWater">How many litres of water do you drink everyday?</label>
+      <input type="number" id="dailyWater" name="dailyWater" min="0" step="0.1" required><br><br>
+
+      <label for="dailyProtein">How many grams of protein do you consume everyday?</label>
+      <input type="number" id="dailyProtein" name="dailyProtein" min="0" required><br><br>
+
+      <label for="dailyFruitsVegetables">How many cups of fruits and vegetables do you consume every day?</label>
+      <input type="number" id="dailyFruitsVegetables" name="dailyFruitsVegetables" min="0" required><br><br>
+
+      <label for="dailyMeals">How many meals do you eat everyday?</label>
+      <input type="number" id="dailyMeals" name="dailyMeals" min="0" required><br><br>
+
+<h2>Section: Functional Food Compliance Index</h2>
+
+<p>Please select all the Functional Food Products that you use:</p>
+<input type="checkbox" id="blueberryGummies" name="functionalFood[]" value="Blueberry Gummies">
+<label for="blueberryGummies">Blueberry Gummies</label><br>
+<input type="checkbox" id="sightC" name="functionalFood[]" value="SightC">
+<label for="sightC">SightC</label><br>
+<input type="checkbox" id="superfoodsWellnessTea" name="functionalFood[]" value="Superfoods Wellness Tea">
+<label for="superfoodsWellnessTea">Superfoods Wellness Tea</label><br>
+<input type="checkbox" id="adaptogenX" name="functionalFood[]" value="Adaptogen X">
+<label for="adaptogenX">Adaptogen X</label><br><br>
+
+<label for="dailyFunctionalFood">Please write the amount of each Functional Food Product you consume on a daily basis:</label>
+<textarea id="dailyFunctionalFood" name="dailyFunctionalFood" rows="4" cols="50" placeholder="Specify amount for each product" required></textarea><br><br>
+
+<label for="functionalFoodUsage">If you have used any Functional Food Products, how long have you been using these products for?</label>
+<input type="text" id="functionalFoodUsage" name="functionalFoodUsage" placeholder="Enter duration" required><br><br>
+
+<label for="regularFunctionalFood">Do you consume the Functional Food Products on a regular basis?</label>
+<select id="regularFunctionalFood" name="regularFunctionalFood" required>
+    <option value="yes">Yes</option>
+    <option value="no">No</option>
+</select><br><br>
+
+<h2>Section: Reading Index</h2>
+
+<label for="screenTime">How many hours do you spend looking at your mobile/computer screen on a daily basis?</label>
+<input type="number" id="screenTime" name="screenTime" min="0" required><br><br>
+
+<label for="readingTime">How many hours do you spend reading books/ebooks on a daily basis?</label>
+<input type="number" id="readingTime" name="readingTime" min="0" required><br><br>
+
+<label for="eyeStrainReading">Do you feel any eye strain after staring at your mobile/computer screen or reading for extended periods of time? If you answered yes to the previous question, what is the degree of eye strain you face while staring at your mobile/computer screen? (Linear Scale 1-10):</label>
+<input type="number" id="eyeStrainReading" name="eyeStrainReading" min="1" max="10"><br><br>
+
+<h2>Section: Indoor Lighting Index</h2>
+
+<label for="homeLighting">Is your home adequately lit? (Example: Lighting level > 1500 lumens)</label>
+<select id ="homeLighting" name="homeLighting" required>
+<option value="yes">Yes</option>
+<option value="no">No</option>
+</select><br><br>
+<label for="homeLightingStrain">Does your home indoor lighting cause eye strain?</label>
+  <select id="homeLightingStrain" name="homeLightingStrain" required>
+      <option value="yes">Yes</option>
+      <option value="no">No</option>
+  </select><br><br>
+
+  <label for="workplaceLighting">Does your workplace have adequate lighting? (Example: Lighting level > 1500 lumens)</label>
+  <select id="workplaceLighting" name="workplaceLighting" required>
+      <option value="yes">Yes</option>
+      <option value="no">No</option>
+  </select><br><br>
+
+  <label for="workplaceLightingStrain">Does your workplace lighting cause eye strain?</label>
+  <select id="workplaceLightingStrain" name="workplaceLightingStrain" required>
+      <option value="yes">Yes</option>
+      <option value="no">No</option>
+  </select><br><br>
+
+  <h2>Section: General Health Index</h2>
+
+  <label for="bmi">What is your current BMI level?</label>
+  <input type="number" id="bmi" name="bmi" min="0" step="0.1" required><br><br>
+
+  <label for="lowEnergy">Do you have low energy levels throughout the day?</label>
+  <select id="lowEnergy" name="lowEnergy" required>
+      <option value="yes">Yes</option>
+      <option value="no">No</option>
+  </select><br><br>
+
+  <label for="energyLevel">On a range of 1-10, how would you describe your current energy levels?</label>
+  <input type="number" id="energyLevel" name="energyLevel" min="1" max="10" required><br><br>
+
+  <label for="dailyEyePain">Do you feel eye pain or strain during the day?</label>
+  <select id="dailyEyePain" name="dailyEyePain" required>
+      <option value="yes">Yes</option>
+      <option value="no">No</option>
+  </select><br><br>
+
+   <h2>Section: Medical History</h2>
+
+   <label for="medicalConditions">Please list any Medical Conditions you are currently suffering from or had been suffering from in the last 12 months:</label>
+<textarea id="medicalConditions" name="medicalConditions" rows="4" cols="50" placeholder="Specify your medical conditions"></textarea><br><br>
+
+<label for="pastSurgicalProcedures">Please list all the surgical procedures you have had in the past:</label>
+<textarea id="pastSurgicalProcedures" name="pastSurgicalProcedures" rows="4" cols="50" placeholder="Specify your past surgical procedures"></textarea><br><br>
+
+<label for="currentMedications">Please list all the medications you are currently taking:</label>
+<textarea id="currentMedications" name="currentMedications" rows="4" cols="50" placeholder="Specify your current medications"></textarea><br><br>
+
+<label for="pregnant">Are you currently pregnant or have been in the past?</label>
+   <select id="pregnant" name="pregnant" required>
+       <option value="yes">Yes</option>
+       <option value="no">No</option>
+   </select><br><br>
+
+   <label for="menstrualCycle">Do you experience any eye pain or strain during your menstrual cycle?</label>
+   <select id="menstrualCycle" name="menstrualCycle" required>
+       <option value="yes">Yes</option>
+       <option value="no">No</option>
+   </select><br><br>
+
+   <label for="menopause">Have you experienced menopause? If yes, did it cause any changes in your eye health?</label>
+   <input type="text" id="menopause" name="menopause" placeholder="Specify if menopause affected your eye health"><br><br>
+
+<input type="submit" value="Submit">
+</form>
+
+  </body>
+</html>
