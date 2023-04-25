@@ -193,7 +193,7 @@ const Survey = mongoose.model('Survey', surveySchema);
 
 
 
-  app.post("/survey", async (req, res) => {
+app.post("/submit-survey", async (req, res) => {
     const survey = new Survey(req.body);
     try {
       await survey.save();
@@ -202,4 +202,4 @@ const Survey = mongoose.model('Survey', surveySchema);
       console.log(error);
       res.redirect("/questions");
     }
-  });
+});
