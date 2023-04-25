@@ -18,7 +18,18 @@ initializePassport(passport,
   async (email) => await User.findOne({ email: email }).exec(),
   async (id) => await User.findById(id).exec())
 
-mongoose.connect(process.env.MONGODB_URI, {useNewUrlParser: true});
+  mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+    .then(() => {
+      console.log("Connected to MongoDB Atlas");
+    })
+    .catch((error) => {
+      console.error("Error connecting to MongoDB Atlas:", error);
+    });
+
+  mongoose.connection.on('error', (error) => {
+    console.error("MongoDB connection error:", error);
+  });
+
 
 const userSchema = new mongoose.Schema({
   name: String,
